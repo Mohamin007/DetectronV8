@@ -301,6 +301,16 @@
     font-weight: 600;
   }
 
+  .stats-warning {
+    width: 100%;
+    max-width: 980px;
+    margin: 0.2rem 0 0.1rem;
+    color: rgba(248, 250, 252, 0.52);
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+
   .features-section {
     position: relative;
     z-index: 1;
@@ -423,7 +433,7 @@
 <section class="stats-section" id="stats-section" aria-label="Performance stats">
   <article class="stat-card">
     <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
-    <span class="stat-number" data-target="99" data-suffix="%">0</span>
+    <span class="stat-number" data-prefix="~" data-target="95" data-suffix="%">0</span>
     <span class="stat-label">Detection Accuracy</span>
   </article>
   <article class="stat-card">
@@ -437,6 +447,7 @@
     <span class="stat-label">Object Classes</span>
   </article>
 </section>
+<p class="stats-warning">* Estimated performance may vary by input quality and scene complexity. Use detection results at your own risk.</p>
 
 <section class="features-section" aria-labelledby="features-title">
   <h2 class="features-title" id="features-title">Why DetectronV8?</h2>
@@ -483,6 +494,7 @@
 
     if (statNumbers.length) {
       var animateCounter = function (node) {
+        var prefix = node.getAttribute('data-prefix') || '';
         var target = Number(node.getAttribute('data-target') || 0);
         var suffix = node.getAttribute('data-suffix') || '';
         var duration = 1200;
@@ -491,7 +503,7 @@
         var tick = function (now) {
           var progress = Math.min((now - start) / duration, 1);
           var value = Math.floor(target * progress);
-          node.textContent = String(value) + suffix;
+          node.textContent = prefix + String(value) + suffix;
 
           if (progress < 1) {
             window.requestAnimationFrame(tick);
