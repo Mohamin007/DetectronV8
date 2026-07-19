@@ -134,7 +134,7 @@ Pull requests are welcome!
 If you find bugs or have suggestions, please open an issue.
 
 👨‍💻 Contributors -
-[Mohamin Mushtaq](https://www.linkedin.com/in/Mohamin007) — Frontend Developer
+[Mohamin Mushtaq](https://www.linkedin.com/in/moham7n) — Frontend Developer
 
 [Iqram Zargar](https://www.linkedin.com/in/iqram-zargar-750709375) — Backend Developer
 
